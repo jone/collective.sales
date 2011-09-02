@@ -41,6 +41,7 @@ setup(name='collective.sales',
         'z3c.autoinclude',
         'plone.app.dexterity [grok]',
         'plone.namedfile',
+        'plone.behavior',
         ],
       tests_require=tests_require,
       extras_require={

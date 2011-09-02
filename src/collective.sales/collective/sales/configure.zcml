@@ -1,22 +1,29 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:grok="http://namespaces.zope.org/grok"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="example.conference">
+      xmlns="http://namespaces.zope.org/zope"
+      xmlns:browser="http://namespaces.zope.org/browser"
+      xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+      xmlns:grok="http://namespaces.zope.org/grok"
+      xmlns:plone="http://namespaces.plone.org/plone"
+      i18n_domain="example.conference">
 
     <includeDependencies package="." />
     <include file="permissions.zcml" />
+    <include package="plone.behavior" file="meta.zcml" />
 
     <grok:grok package="." />
 
     <!-- Register an extension profile to make the product installable -->
     <genericsetup:registerProfile
-        name="default"
-        title="collective.sales"
-        description="Install collective.sales"
-        directory="profiles/default"
-        provides="Products.GenericSetup.interfaces.EXTENSION"
-        />
+          name="default"
+          title="collective.sales"
+          description="Install collective.sales"
+          directory="profiles/default"
+          provides="Products.GenericSetup.interfaces.EXTENSION"
+          />
+
+    <plone:behavior
+          title="Shop categorizable"
+          description="List in one or more shop categories"
+          provides=".categorizable.ICategorizable" />
 
 </configure>
