@@ -10,25 +10,25 @@ class IShopCategory(form.Schema):
 
     form.primary('title')
     title = schema.TextLine(
-        title=_(u'category_title_label',
+        title=_(u'title_label',
                 default=u'Title'),
-        description=_(u'category_title_help',
+        description=_(u'title_help',
                       default=u''),
         required=True,
         )
 
     description = schema.Text(
-        title=_(u'category_description_label',
+        title=_(u'description_label',
                 default=u'Description'),
-        description=_(u'category_description_help',
+        description=_(u'description_help',
                       default=u''),
         required=False,
         )
 
     cover_image = NamedImage(
-        title=_(u'category_cover_image_label',
+        title=_(u'cover_image_label',
                 default=u'Cover image'),
-        description=_(u'category_cover_image_help',
+        description=_(u'cover_image_help',
                       default=u''),
         required=False,
         )

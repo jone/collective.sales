@@ -42,6 +42,7 @@ setup(name='collective.sales',
         'plone.app.dexterity [grok]',
         'plone.namedfile',
         'plone.behavior',
+        'plone.app.textfield',
         ],
       tests_require=tests_require,
       extras_require={

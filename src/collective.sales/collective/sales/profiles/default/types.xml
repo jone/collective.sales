@@ -1,3 +1,6 @@
 <object name="portal_types">
     <object name="collective.sales.shopcategory" meta_type="Dexterity FTI" />
+    <object name="collective.sales.simpleshopitem" meta_type="Dexterity FTI" />
+    <object name="collective.sales.multishopitem" meta_type="Dexterity FTI" />
+    <object name="collective.sales.multishopitemvariant" meta_type="Dexterity FTI" />
 </object>

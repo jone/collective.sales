@@ -4,7 +4,12 @@
 
     <permission
           id="collective.sales.AddShopCategory"
-          title="collective.sales: Add ShopCategory"
+          title="collective.sales: Add Shop Category"
+          />
+
+    <permission
+          id="collective.sales.AddShopItem"
+          title="collective.sales: Add Shop Item"
           />
 
 </configure>
