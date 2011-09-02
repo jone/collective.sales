@@ -1,6 +1,7 @@
 .installed.cfg
 bin/
 buildout.cfg
+coverage/
 develop-eggs/
 eggs/
 parts/
