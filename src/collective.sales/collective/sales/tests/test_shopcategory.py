@@ -21,7 +21,7 @@ class TestShopCategory(unittest.TestCase):
 
         self.assertIn(id, portal.keys())
 
-        portal.manage_delObjects((id,))
+        portal.manage_delObjects([id,])
 
     def test_category_nestable(self):
         portal = self.layer['portal']
@@ -47,3 +47,5 @@ class TestShopCategory(unittest.TestCase):
                 title=u'Second')
 
         self.assertIn(second_id, portal.get('first').keys())
+
+        portal.manage_delObjects([first_id, second_id])
