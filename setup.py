@@ -37,7 +37,9 @@ setup(name='collective.sales',
 
       install_requires=[
         'setuptools',
+        'z3c.autoinclude',
         'plone.app.dexterity [grok]',
+        'plone.namedfile',
         ],
       tests_require=tests_require,
       extras_require={
