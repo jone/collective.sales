@@ -4,6 +4,7 @@ buildout.cfg
 develop-eggs/
 eggs/
 parts/
+var/
 
 src/*
 !src/collective.sales/
