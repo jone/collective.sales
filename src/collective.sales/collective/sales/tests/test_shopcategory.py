@@ -46,6 +46,6 @@ class TestShopCategory(unittest.TestCase):
                 second_id,
                 title=u'Second')
 
-        self.assertIn(second_id, portal.get('first').keys())
+        self.assertIn(second_id, portal.get(first_id).keys())
 
-        portal.manage_delObjects([first_id, second_id])
+        portal.manage_delObjects([first_id])
