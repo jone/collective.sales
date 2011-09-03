@@ -26,4 +26,14 @@
           description="List in one or more shop categories"
           provides=".categorizable.ICategorizable" />
 
+    <plone:behavior
+          title="Shop item behavior"
+          description="Adds default fields for shop items"
+          provides=".shopitem.IShopItemBehavior" />
+
+    <plone:behavior
+          title="Buyable behavior"
+          description="Adds fields required for buying an item"
+          provides=".shopitem.IBuyableBehavior" />
+
 </configure>
