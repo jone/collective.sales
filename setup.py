@@ -12,8 +12,8 @@ tests_require = [
 
 setup(name='collective.sales',
       version=version,
-      description='A simply online shop solution for plone',
-      keywords='',
+      description='A simple dexterity based online shop for Plone.',
+      keywords='online shop plone dexterity',
 
       long_description=open('README.rst').read() + '\n' + \
           open(os.path.join('docs', 'HISTORY.txt')).read(),
