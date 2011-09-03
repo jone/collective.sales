@@ -7,6 +7,7 @@ version = '1.0dev'
 
 tests_require = [
     'plone.app.testing',
+    'mocker',
     ]
 
 

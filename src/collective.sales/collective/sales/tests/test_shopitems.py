@@ -1,10 +1,13 @@
 from collective.sales import shopitem
 from collective.sales.testing import SALES_INTEGRATION_TESTING
 from collective.sales.tests.helpers import RoleSwitcher
+from mocker import Mocker
 from plone.dexterity.interfaces import IDexterityFTI
 from plone.dexterity.utils import createContentInContainer
+from plone.testing.zca import UNIT_TESTING
 from zope.component import createObject
 from zope.component import queryUtility
+from zope.interface import implements
 import unittest2 as unittest
 
 
@@ -144,3 +147,43 @@ class TestMultiShopItem(unittest.TestCase):
                 price=2)
 
             portal.manage_delObjects([category.id])
+
+
+class TestShopItemVariantDefaultLabel(unittest.TestCase):
+
+    layer = UNIT_TESTING
+
+    def test_default_variant_label_empty(self):
+        mocker = Mocker()
+        data = mocker.mock()
+
+        data.context.objectValues()
+        mocker.result(())
+
+        mocker.replay()
+        self.assertEquals(shopitem.default_variant_label(data), '')
+
+    def test_default_is_same_as_existing_variant(self):
+        class Variant(object):
+            implements(shopitem.IMultiShopItemVariant)
+            variant_label = None
+
+        obj = Variant()
+        obj.variant_label = 'Foo'
+
+        self.assertTrue(shopitem.IMultiShopItemVariant.providedBy(obj))
+        self.assertEquals(shopitem.IMultiShopItemVariant(obj).variant_label, 'Foo')
+
+        # create the data object with a context containing the variant
+        # created above
+        mocker = Mocker()
+        data = mocker.mock()
+
+        data.context.objectValues()
+        mocker.result((obj,))
+
+        mocker.replay()
+
+        # the default value function should now propose 'Foo', as defined
+        # in the other existing variant.
+        self.assertEquals(shopitem.default_variant_label(data), 'Foo')
