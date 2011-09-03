@@ -26,8 +26,8 @@
     <!-- enabled behaviors -->
     <property name="behaviors">
         <element value="plone.app.content.interfaces.INameFromTitle" />
+        <element value="collective.sales.shopitem.IBuyableBehavior" />
         <element value="collective.sales.categorizable.ICategorizable" />
-        <element value="collective.sales.shopitem.IShopItemBehavior" />
     </property>
 
     <!-- View information -->
