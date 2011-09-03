@@ -1,0 +1,65 @@
+Started by an SCM change
+Checkout:workspace / /var/lib/jenkins/jobs/collective.sales/workspace - hudson.remoting.LocalChannel@17951f3
+Using strategy: Default
+Last Built Revision: Revision 9a21a5733020e8a349cf59325ff9f012c230ccc7 (origin/master)
+Checkout:workspace / /var/lib/jenkins/jobs/collective.sales/workspace - hudson.remoting.LocalChannel@17951f3
+Fetching changes from the remote Git repository
+Fetching upstream changes from git@github.com:jone/collective.sales.git
+Seen branch in repository origin/master
+Commencing build of Revision e860e598cd53ba48a5c118318543f077b9dcd65e (origin/master)
+Checking out Revision e860e598cd53ba48a5c118318543f077b9dcd65e (origin/master)
+[workspace] $ /bin/sh -xe /tmp/hudson3214908430151090395.sh
++ '[' '!' -L buildout.cfg ']'
++ '[' '!' -x bin/buildout ']'
++ bin/buildout
+Develop: '/var/lib/jenkins/jobs/collective.sales/workspace/.'
+Unused options for buildout: 'eggs'.
+Updating test.
+Getting distribution for 'mocker==1.0'.
+zip_safe flag not set; analyzing archive contents...
+Got mocker 1.0.
+Generated script '/var/lib/jenkins/jobs/collective.sales/workspace/bin/test'.
+Updating coverage-report.
++ bin/test
+/var/lib/jenkins/zope/eggs/manuel-1.1.1-py2.6.egg/manuel/testing.py:8: DeprecationWarning: zope.testing.exceptions is deprecated in favour of zope.testrunner.exceptions
+  import zope.testing.exceptions
+/var/lib/jenkins/zope/eggs/plone.testing-4.0.1-py2.6.egg/plone/testing/z2.py:19: DeprecationWarning: Zope2VocabularyRegistry is deprecated. Please import from Zope2.App.schema
+  from Products.Five.schema import Zope2VocabularyRegistry
+Running collective.sales.testing.Sales:Integration tests:
+  Set up plone.testing.zca.LayerCleanup in 0.001 seconds.
+  Set up plone.testing.z2.Startup/var/lib/jenkins/zope/eggs/zope.configuration-3.7.4-py2.6.egg/zope/configuration/config.py:193: DeprecationWarning: FiveSecurityPolicy is deprecated. Please import from AccessControl.security
+  obj = getattr(mod, oname)
+ in 1.082 seconds.
+  Set up plone.app.testing.layers.PloneFixture in 38.087 seconds.
+  Set up collective.sales.testing.SalesLayer/var/lib/jenkins/zope/eggs/five.grok-1.2.0-py2.6.egg/five/grok/meta.py:29: DeprecationWarning: protectClass is deprecated. Please import from AccessControl.security
+  from Products.Five.security import protectClass, protectName
+/var/lib/jenkins/zope/eggs/five.grok-1.2.0-py2.6.egg/five/grok/meta.py:29: DeprecationWarning: protectName is deprecated. Please import from AccessControl.security
+  from Products.Five.security import protectClass, protectName
+ in 6.641 seconds.
+  Set up collective.sales.testing.Sales:Integration in 0.000 seconds.
+  Ran 13 tests with 0 failures and 0 errors in 4.787 seconds.
+Running plone.testing.zca.UnitTesting tests:
+  Tear down collective.sales.testing.Sales:Integration in 0.000 seconds.
+  Tear down collective.sales.testing.SalesLayer in 0.017 seconds.
+  Tear down plone.app.testing.layers.PloneFixture in 0.444 seconds.
+  Tear down plone.testing.z2.Startup in 0.023 seconds.
+  Tear down plone.testing.zca.LayerCleanup in 0.010 seconds.
+  Set up plone.testing.zca.UnitTesting in 0.000 seconds.
+  Ran 2 tests with 0 failures and 0 errors in 0.023 seconds.
+Tearing down left over layers:
+  Tear down plone.testing.zca.UnitTesting in 0.000 seconds.
+Total: 15 tests, 0 failures, 0 errors in 53.474 seconds.
++ pylint collective.sales
++ tee pylint.txt
+collective.sales:1: [F0001] No module named collective.sales
+[TASKS] Scanning workspace files for tasks...
+Recording test results
+Performing Post build task...
+Match found for : : True
+Logical operation result is TRUE
+Running script  : /var/lib/jenkins/scripts/git-note-result-async.sh
+[workspace] $ /bin/sh -xe /tmp/hudson6478722042337814205.sh
++ /var/lib/jenkins/scripts/git-note-result-async.sh
+POST BUILD TASK : SUCCESS
+END OF POST BUILD TASK : 0
+Finished: SUCCESS
