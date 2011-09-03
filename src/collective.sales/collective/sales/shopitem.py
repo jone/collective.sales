@@ -15,8 +15,30 @@ class IMultiShopItem(Interface):
     pass
 
 
-class IMultiShopItemVariant(Interface):
-    pass
+class IMultiShopItemVariant(form.Schema):
+
+    form.primary('title')
+    title = schema.TextLine(
+        title=_(u'item_title_label', default=u'Title'),
+        description=_(u'item_title_help', default=u''),
+        required=True,
+        )
+
+    variant_label = schema.TextLine(
+        title=_(u'item_variant_label_label', default=u'Variant label'),
+        description=_(u'item_variant_label_help', default=u''),
+        required=False,
+        )
+
+
+@form.default_value(field=IMultiShopItemVariant['variant_label'])
+def default_variant_label(data):
+    for obj in data.context.objectValues():
+        if IMultiShopItemVariant.providedBy(obj):
+            return IMultiShopItemVariant(obj).variant_label
+
+    return ''
+
 
 
 class IShopItemBehavior(form.Schema):
