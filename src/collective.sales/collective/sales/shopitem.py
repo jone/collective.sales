@@ -65,6 +65,7 @@ class IBuyableBehavior(form.Schema):
     price = schema.Float(
         title=_(u'price_label', default=u'Price'),
         description=_(u'price_help', default=u''),
+        default=0,
         required=True)
 
 
